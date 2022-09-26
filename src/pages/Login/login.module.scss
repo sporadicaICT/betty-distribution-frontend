@@ -1,0 +1,44 @@
+.main {
+    width: 70%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 30px;
+    background-color: #EEEEEE;
+
+    img {
+        width: 350px;
+    }
+
+}
+
+.intro {
+    text-align: center;
+    margin: 20px 0;
+
+    h2, p {
+        margin: 0 0 10px 0;
+    }
+
+    a, a:visited, a:active {
+        text-decoration: none;
+        color: #F27F7E;
+    }
+}
+
+.or{
+    display: flex;
+    align-items: center;
+
+    hr{
+        width: 45%;
+        margin: 0 5px;
+        border-top: 1px solid #121212;
+    }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+}
