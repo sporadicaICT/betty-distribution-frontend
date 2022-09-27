@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { lazy, useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 
-import { LoginPage } from './pages'
+import { LoginPage } from './pages';
+
+//Lazy Loaded Pages
+const SignUpPage = lazy(() => import('./pages').then(m => ({default: m.SignUpPage})))
+const AdminPage = lazy(() => import('./pages').then(m => ({default: m.AdminPage})))
+
 function App() {
   const [authenticated, setAuth] = useState(false);
   const theme = createTheme({
@@ -21,6 +26,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path='/' element={authenticated ? <HomePage/> : <LoginPage/>}  />
+        <Route path="/sign-up" element={<SignUpPage/>} />
+        <Route path="/admin" element={<AdminPage/>} />
       </Routes>
     </ThemeProvider>
   )
