@@ -10,25 +10,16 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ name, onChange }) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     return(
-        <Box>
-            <Box>
-                <TextField 
-                    disabled 
-                    label="Attachment" 
-                    variant='standard'
-                />
-            </Box>
-            <ButtonBase component="label">
-                <input 
-                    ref={inputRef}
-                    type="file"  
-                    name={name} 
-                    accept="image/*"
-                    
-                    title="Select Image"
-                    onChange={onChange}
-                />
-            </ButtonBase>
+        <Box sx={{ width:'100%', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+            <TextField variant='standard' sx={{border:0}}/>
+
+            <input
+                type="file"  
+                name={name} 
+                accept="image/*"
+                title="Select Image"
+                onChange={onChange}
+            />
         </Box>
     )
 }
