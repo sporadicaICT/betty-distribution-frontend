@@ -2,6 +2,7 @@ import Logo from '../../assets/logo.svg';
 import styles from './navbar.module.scss';
 import { Container, Box } from '@mui/material';
 import { Search, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 type NavbarProps = {
     signedIn: boolean
@@ -39,9 +40,11 @@ export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
                     </div>
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
-                        <div className={styles.navbarBox}>
-                            <PersonOutline/>
-                        </div>
+                        <Link to={'/update-profile'}>
+                            <div className={styles.navbarBox}>
+                                <PersonOutline/>
+                            </div>
+                        </Link>
                     </Box>
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
