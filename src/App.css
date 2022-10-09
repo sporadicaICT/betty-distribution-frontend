@@ -9,3 +9,8 @@ p{
 .header-1{
     font-family: 'Poppins', sans-serif;
 }
+
+.form {
+    width: 50%;
+    margin: 0 auto;
+}
