@@ -1,0 +1,15 @@
+.boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.descriptionBox {
+    display: flex;
+    width: 30%;
+    padding: 10px;
+
+    img {
+        align-items: flex-start;
+    }
+}
