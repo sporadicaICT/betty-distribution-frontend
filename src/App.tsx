@@ -3,14 +3,14 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 
-import { LoginPage } from './pages';
+import { LoginPage, HomePage } from './pages';
 
 //Lazy Loaded Pages
 const SignUpPage = lazy(() => import('./pages').then(m => ({default: m.SignUpPage})))
 const AdminPage = lazy(() => import('./pages').then(m => ({default: m.AdminPage})))
 
 function App() {
-  const [authenticated, setAuth] = useState(false);
+  const [authenticated, setAuth] = useState(true);
   const theme = createTheme({
     palette: {
       primary: {
@@ -33,8 +33,6 @@ function App() {
   )
 }
 
-function HomePage(){
-  return(<div>Home page</div>)
-}
+
 
 export default App
