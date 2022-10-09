@@ -16,3 +16,21 @@ export const buttonStyles: SxProps = {
         boxShadow: 0
     }
 } 
+
+export const whiteButtonText: SxProps = {
+    color: '#fff',
+    fontWeight: 600
+}
+
+export const backdropStyle: SxProps = {
+    display: 'flex',
+    alignItems: 'center'
+}
+
+export const modalStyle: SxProps = {
+    background: '#fff',
+    border: 1.5,
+    borderColor: '#121212',
+    width: '50%',
+    margin: '0 auto'
+}
