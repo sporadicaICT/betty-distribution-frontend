@@ -59,9 +59,11 @@ export const LoginPage: React.FC = () => {
                                 placeholder="Enter your password"
                             />
 
-                            <Button sx={buttonStyles}>
-                                Forgot Password?
-                            </Button>
+                            <Link to="/forgot">
+                                <Button sx={buttonStyles}>
+                                    Forgot Password?
+                                </Button>
+                            </Link>
                             <Button
                             type="submit"
                                 variant="contained"
