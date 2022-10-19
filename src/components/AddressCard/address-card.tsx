@@ -72,7 +72,7 @@ export const AddressCard: React.FC<AddressCardProps> = (props) => {
 
             {/* Alert to ask if they want to really delete */}
             <Modal sx={backdropStyle} open={alertOpen} onClose={() => setAlert(false)}>
-                <Box sx={modalStyle}>
+                <Box className="modal-form-container" sx={modalStyle}>
                     <h2>Delete Address?</h2>
                     <Typography variant="subtitle1">
                         Are you sure you want to delete the delivery address?
@@ -91,7 +91,7 @@ export const AddressCard: React.FC<AddressCardProps> = (props) => {
 
             {/* Modal Pops up for Edit Address*/}
             <Modal open={modalOpen} onClose={() => setModal(false)} sx={backdropStyle}>
-                <Box sx={modalStyle}>
+                <Box className="modal-form-container" sx={modalStyle}>
                     <form className="form">
                         <TextField
                             value={props.streetAddress}
