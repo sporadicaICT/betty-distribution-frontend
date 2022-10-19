@@ -1,6 +1,51 @@
+export interface DeliveryAddress {
+    name: string;
+    phone_number: string;
+    street_address: string;
+    city: string;
+    state: string;
+}
+
+
 export interface User {
-    id: string;
     email: string;
-    password: string; //Might remove this, don't really need to store this on frontend for security reasons(even though we're encryting)
+    phone_number: string[];
     cart: any[];
+    name: string;
+    still_exists: boolean;
+    user_delivery_address: DeliveryAddress[];
+}
+
+export interface Cart {
+    product:{
+        id: string;
+        name: string;
+        size: string;
+        brand: string;
+        unit_price: number;
+        quantity: number;
+    }[];
+}
+
+export interface Brand {
+    name: string;
+}
+
+export interface Product {
+    id: string;
+    name: string;
+    brand: string;
+    size?: string;
+    unit_price: number; 
+    description?: string;
+    quantity_left: number;
+    tags?: string[];
+    image_url?:string;
+}
+export interface Order {
+    order_num: string;
+    order_status: "pending"|"delayed"|"delivered"|"failed"|"in transit",
+    order_type: "wholesale"|"retail",
+    items: Cart,
+    delivery_address: DeliveryAddress
 }
