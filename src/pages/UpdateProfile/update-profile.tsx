@@ -106,7 +106,7 @@ export const UpdateProfilePage: React.FC = () => {
                         Add Delivery Address
                     </Button>
                     <Modal sx={backdropStyle} open={modalOpen} onClose={() => setModal(false)}>
-                        <Box sx={modalStyle}>
+                        <Box className={styles.form} sx={modalStyle}>
 
                             <form className={styles.form}>
                                 <TextField
