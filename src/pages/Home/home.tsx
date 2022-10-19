@@ -24,43 +24,39 @@ export const HomePage: React.FC = () => {
     return(
         <React.Fragment>
             <Navbar signedIn={true}/>
-            <TabsSection />
-            <Container sx={{ padding: '0 3rem' }}>
-                <Box sx={boxStyles}>
-                    <Grid container>
-                        <Grid sx={{ color: '#fff' }} xs={8} item>
-                            <Typography>
-                                Providing Quality Goods
-                            </Typography>
-                            <Typography>
-                                At affordable prices
-                            </Typography>
-                        </Grid>
-                        <Grid xs={4} item>
-                            <img src={RedBag} alt="Red shopping bag"/>
-                        </Grid>
-                    </Grid>
+
+            <section className={styles.boxes}>
+                <Box sx={boxStyles} className={styles.intro}>
+                    <div>
+                        <Typography variant="h4">
+                            Providing Quality Goods
+                        </Typography>
+                        <Typography variant="h5">
+                            At affordable prices
+                        </Typography>
+                    </div>
+                    <img src={RedBag} alt="Red shopping bag"/>
                 </Box>
+            </section>
 
-                <section className={styles.boxes}>
-                    <DescriptionBox
-                        title="Search"
-                        description="Search through our catalog of great products."
-                        image={SearchIll}
-                    />
-                    <DescriptionBox
-                        title="Shop by Brand"
-                        image={ShopByBrand}
-                        description="Various brabds to choose from!"
-                    />
-                    <DescriptionBox
-                        title="Checkout"
-                        image={CartIll}
-                        description="Have items delivered to your doorstep with ease."
-                    />
-                </section>
 
-            </Container>
+            <section className={styles.boxes}>
+                <DescriptionBox
+                    title="Search"
+                    description="Search through our catalog of great products."
+                    image={SearchIll}
+                />
+                <DescriptionBox
+                    title="Shop by Brand"
+                    image={ShopByBrand}
+                    description="Various brabds to choose from!"
+                />
+                <DescriptionBox
+                    title="Checkout"
+                    image={CartIll}
+                    description="Have items delivered to your doorstep with ease."
+                />
+            </section>
 
 
         </React.Fragment>
