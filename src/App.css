@@ -10,7 +10,14 @@ p{
     font-family: 'Poppins', sans-serif;
 }
 
-.form {
+.modal-form-container {
     width: 50%;
     margin: 0 auto;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 800px){
+    .modal-form-container {
+        width: 85%;
+    }
 }
