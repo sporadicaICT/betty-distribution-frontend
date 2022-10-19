@@ -1,37 +1,27 @@
-import { Tab, Tabs } from "@mui/material"
+import { Box, Tab, Tabs } from "@mui/material"
 import { styled, SxProps, useTheme } from "@mui/material/styles";
 import React, { useState } from "react";
 
-import { TabNames } from "./tab-names"
+import { TabNames } from "./tab-names";
+
+
+
+
 export const TabsSection: React.FC = () => {
-    return(
-        <TabsLayout>
-            <CustomTab labelName="Ingredients"/>
-            <CustomTab labelName="Snacks"/>
-            <CustomTab labelName="Vegetables"/>
-            <CustomTab labelName="Fruits"/>
-            <CustomTab labelName="Provisions"/>
-            <CustomTab labelName="Meats"/>
-            <CustomTab labelName="Others"/>
-        </TabsLayout>
-    )
-}
-
-type TabsLayoutProps = {
-    children: React.ReactNode
-}
-
-const TabsLayout: React.FC<TabsLayoutProps> = ({children}) => {
-    const theme = useTheme()
-
     const [activeTab, setActiveTab] = useState(0);
 
-    const handleClick = (event:React.SyntheticEvent, newValue:number) => {
-        setActiveTab(newValue)
-        console.log(newValue)
+    const theme = useTheme()
+
+    //Styling for Tab Component
+    const TabStyle: SxProps = {
+        textTransform: 'capitalize',
+        fontSize: 16,
+        fontFamily: "Poppins, sans-serif",
+        padding: '8px 12px'
     }
     
-    const TabStyles: SxProps = {
+    //Styling for Tabs Component. Notice the spelling
+    const TabsStyle: SxProps = {
         '& .MuiTabs-indicator': {
             display: 'flex',
             justifyContent: 'center',
@@ -43,35 +33,28 @@ const TabsLayout: React.FC<TabsLayoutProps> = ({children}) => {
             backgroundColor: theme.palette.primary.main,
         },
     }
-    
+
     return(
-        <Tabs 
-            value={activeTab}
-            onChange={handleClick}
-            sx={TabStyles}
-            TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan"/> }}
-            variant="fullWidth" centered>
-            { children }
-        </Tabs>
+        <Box sx={{ margin: '10px 0' }}>
+            <Tabs 
+                scrollButtons
+                allowScrollButtonsMobile
+                sx={TabsStyle} 
+                value={activeTab} 
+                variant="scrollable" 
+                centered={true}
+                TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan"/> }}
+                onChange={(e, val) => setActiveTab(val)}>
+
+                <Tab sx={TabStyle} label="Ingredients"/>
+                <Tab sx={TabStyle} label="Snacks"/>
+                <Tab sx={TabStyle} label="Vegetables"/>
+                <Tab sx={TabStyle} label="Fruits"/>
+                <Tab sx={TabStyle} label="Provisions"/>
+                <Tab sx={TabStyle} label="Meats"/>
+                <Tab sx={TabStyle} label="Others"/>
+            </Tabs>
+        </Box>
     )
 }
 
-type CustomTabProps = {
-    labelName: string,
-}
-
-const CustomTab: React.FC<CustomTabProps> = ({ labelName }) => {
-    const TabStyles: SxProps = {
-        textTransform: 'capitalize',
-        fontSize: 16,
-        margin: '0 20px',
-        fontFamily: "Poppins, sans-serif"
-    }
-    
-    return(
-        <Tab 
-            disableRipple
-            sx={TabStyles}
-            label={labelName}/>
-    )
-}
