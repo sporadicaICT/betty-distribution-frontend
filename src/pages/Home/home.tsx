@@ -1,4 +1,4 @@
-import { Tabs, Tab, Container, Box, useTheme, Grid, Typography, SxProps } from "@mui/material"
+import { Tabs, Tab, Container, Box, useTheme, Grid, Typography, SxProps, Button } from "@mui/material"
 import React, { useState } from "react"
 import { Navbar, TabsSection } from "../../components";
 
@@ -58,6 +58,9 @@ export const HomePage: React.FC = () => {
                 />
             </section>
 
+            <Button sx={{margin: '0 auto'}} href="/admin">
+                Go to Admin
+            </Button>
 
         </React.Fragment>
     )
