@@ -48,13 +48,15 @@ export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
                     </Box>
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
-                        <div className={`${styles.navbarBox} ${styles.cartbox}`}>
-                            <ShoppingCartOutlined/>
-                            <span>
-                                <span>&#8358;</span>
-                                6000
-                            </span>
-                        </div>
+                        <Link to={'/cart'}>
+                            <div className={`${styles.navbarBox} ${styles.cartbox}`}>
+                                <ShoppingCartOutlined/>
+                                <span>
+                                    <span>&#8358;</span>
+                                    6000
+                                </span>
+                            </div>
+                        </Link>
                     </Box>
                 </Box>
             </Container>
