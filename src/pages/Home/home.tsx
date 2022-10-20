@@ -58,9 +58,9 @@ export const HomePage: React.FC = () => {
                 />
             </section>
 
-            <Button sx={{margin: '0 auto'}} href="/admin">
-                Go to Admin
-            </Button>
+            <Link to={'/admin'}>
+                <Button sx={{margin: '0 auto'}}>Go to Admin</Button>
+            </Link>
 
         </React.Fragment>
     )
