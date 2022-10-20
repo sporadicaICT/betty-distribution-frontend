@@ -4,3 +4,4 @@ export * from './Navbar/navbar';
 export * from './ImagePicker/imagepicker';
 export * from './Tabs/tabs';
 export * from './AddressCard/address-card';
+export * from './CustomModal/modal';

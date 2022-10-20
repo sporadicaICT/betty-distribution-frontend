@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
                     <div className={styles.navbarBox}>
                         <img src={Logo} alt="Logo"/>
                     </div>
-                    <h2 className='header-1'>Betty Distribution</h2>
+                    <h2 className={`header-1 ${styles.companyName}`}>Betty Distribution</h2>
                 </Box>
 
                 <Box sx={{...boxStyles, gap:'10px'}}>

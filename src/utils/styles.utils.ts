@@ -31,6 +31,5 @@ export const modalStyle: SxProps = {
     background: '#fff',
     border: 1.5,
     borderColor: '#121212',
-    width: '50%',
-    margin: '0 auto'
+    margin: '0 auto',
 }
