@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 
+
 import { LoginPage, HomePage, UpdateProfilePage, CartPage } from './pages';
 import { create } from '@mui/material/styles/createTransitions';
 
@@ -18,13 +19,22 @@ export const Context = createContext<any>(null);
 
 function App() {
   const [cartData, setCartData] = useState([{
-    name: 'beans'
+    name: 'beans',
+    image: '',
+    price: 1450,
+    quantity: 1
   },
   {
-    name: 'rice'
+    name: 'rice',
+    image: '',
+    price: 2000,
+    quantity: 1
   },
   {
-    name: 'wok' //fake cart data
+    name: 'flour',
+    image: '',
+    price: 3400,
+    quantity: 1 //fake cart data
   }]);
 
   // const values = useMemo(() => ({
