@@ -1,5 +1,5 @@
 import { lazy, useState, createContext, useMemo } from 'react'
-import './App.css'
+import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 
