@@ -1,0 +1,31 @@
+.productCard {
+    width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+
+    div{
+        width: 100%;
+    }
+    .imageHolder {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 30px;
+    }
+
+    img {
+        width: 80%;
+    }
+
+    .addBtn{
+        margin-left: auto;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
