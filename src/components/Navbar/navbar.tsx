@@ -2,7 +2,7 @@ import Logo from '../../assets/logo.svg';
 import styles from './navbar.module.scss';
 import { Container, Box } from '@mui/material';
 import { Search, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type NavbarProps = {
     signedIn: boolean
@@ -19,6 +19,9 @@ const containerStyles = {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
+
+    const router = useNavigate();
+
     return(
         <nav className={styles.navbar}>
             <Container sx={containerStyles}>
@@ -40,23 +43,19 @@ export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
                     </div>
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
-                        <Link to={'/update-profile'}>
-                            <div className={styles.navbarBox}>
-                                <PersonOutline/>
-                            </div>
-                        </Link>
+                        <div onClick={() => router('/update-profile')} className={styles.navbarBox}>
+                            <PersonOutline/>
+                        </div>
                     </Box>
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
-                        <Link to={'/cart'}>
-                            <div className={`${styles.navbarBox} ${styles.cartbox}`}>
-                                <ShoppingCartOutlined/>
-                                <span>
-                                    <span>&#8358;</span>
-                                    6000
-                                </span>
-                            </div>
-                        </Link>
+                        <div onClick={() => router('/cart')} className={`${styles.navbarBox} ${styles.cartbox}`}>
+                            <ShoppingCartOutlined fontSize='small'/>
+                            <span>
+                                <span>&#8358;</span>
+                                6000
+                            </span>
+                        </div>
                     </Box>
                 </Box>
             </Container>

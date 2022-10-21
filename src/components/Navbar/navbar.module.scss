@@ -8,12 +8,13 @@ $navbar-height: 60px;
     align-items: center;
     justify-content: center;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .cartbox {
     width: 100px;
     gap: 10px;
-}
+    font-family: 'Rubik', sans-serif;}
 
 .navbar{
     height: $navbar-height;
