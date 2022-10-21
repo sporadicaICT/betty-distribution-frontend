@@ -1,0 +1,11 @@
+
+.mainContent {
+    background-color: #eeeeee;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.productsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
