@@ -17,15 +17,14 @@ export interface User {
 }
 
 export interface Cart {
-    product:{
         id: string;
         name: string;
         size: string;
         brand: string;
         unit_price: number;
         quantity: number;
-    }[];
-}
+        image: string;
+};
 
 export interface Brand {
     name: string;

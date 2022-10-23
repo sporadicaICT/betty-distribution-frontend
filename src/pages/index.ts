@@ -5,4 +5,5 @@ export * from './Home/home';
 export * from './ForgotPassword/forgotpass';
 export * from './ConfirmReset/confirmreset';
 export * from './UpdateProfile/update-profile';
-export * from './Cart/cart'
+export * from './Cart/cart';
+export * from './Product/product';

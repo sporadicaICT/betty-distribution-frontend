@@ -22,6 +22,11 @@ export const whiteButtonText: SxProps = {
     fontWeight: 600
 }
 
+export const blackButtonText: SxProps = {
+    color: '#000',
+    fontWeight: 600
+}
+
 export const backdropStyle: SxProps = {
     display: 'flex',
     alignItems: 'center'

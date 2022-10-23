@@ -1,16 +1,16 @@
 import { Product } from "../types";
 import { makeid } from "../helpers";
 
-import Gino from "../assets/logo.svg"
+import Gino from "../assets/gino.svg";
 
-export const Product: Product = {
+export const SingleProduct: Product = {
     id: makeid(15),
     name: "Gino Pepper & Onion Tomato Paste 70g Sachet",
     brand: "gino",
     size: "70g",
     unit_price: 150,
     description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-    quanitity_left: 5,
+    quantity_left: 5,
     tags: ['spices','condiments'],
     image_url: Gino
 }
@@ -23,7 +23,7 @@ export const Products: Product[] = [
         size: "70g",
         unit_price: 150,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 5,
+        quantity_left: 5,
         tags: ['spices','condiments'],
         image_url: Gino
     },
@@ -34,7 +34,7 @@ export const Products: Product[] = [
         size: "5g",
         unit_price: 20,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 51,
+        quantity_left: 51,
         tags: ['spices','condiments'],
         image_url: Gino
 
@@ -46,7 +46,7 @@ export const Products: Product[] = [
         size: "70g",
         unit_price: 150,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 5,
+        quantity_left: 5,
         tags: ['spices','condiments'],
         image_url: Gino
 
@@ -58,7 +58,7 @@ export const Products: Product[] = [
         size: "900g",
         unit_price: 2500,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 5,
+        quantity_left: 5,
         tags: ['spices','condiments'],
         image_url: Gino
 
@@ -70,7 +70,7 @@ export const Products: Product[] = [
         size: "700g",
         unit_price: 750,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 5,
+        quantity_left: 5,
         tags: ['spices','condiments'],
         image_url: Gino
 
@@ -82,7 +82,7 @@ export const Products: Product[] = [
         size: "700g",
         unit_price: 200,
         description: "lorem ipsum bla bla bla no be me go waste time dey write description for product wey no exist lol",
-        quanitity_left: 5,
+        quantity_left: 5,
         tags: ['spices','condiments'],
         image_url: Gino
 
