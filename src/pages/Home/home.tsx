@@ -1,6 +1,7 @@
 import { Tabs, Tab, Container, Box, useTheme, Grid, Typography, SxProps, Button } from "@mui/material"
 import React, { useState } from "react"
 import { Navbar, TabsSection } from "../../components";
+import { Link } from "react-router-dom";
 
 import RedBag from '../../assets/red-bag.svg';
 import SearchIll from '../../assets/search-illustration.svg';
@@ -8,7 +9,6 @@ import ShopByBrand from "../../assets/shop-by-brand-illustration.svg";
 import CartIll from '../../assets/cart-illustration.svg';
 
 import styles from './home.module.scss';
-import { Link } from "react-router-dom";
 
 export const HomePage: React.FC = () => {
     const [activeTab, setActiveTab] = useState(0);

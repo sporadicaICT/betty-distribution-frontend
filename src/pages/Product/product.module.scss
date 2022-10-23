@@ -1,0 +1,72 @@
+.options{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 5rem;
+}
+.roptions{
+    display: none;
+}
+
+.desc{
+    padding: 1rem;
+    align-items: center;
+}
+.product{
+    height: 100%
+}
+.rimg{
+    width: 40%
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem
+}
+.icon{
+    font-size: 2rem;
+    // position: relative;
+    // top: 1.4rem
+    vertical-align: bottom;
+}
+select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    color: none;
+    background-image: url("../../assets/arrow-down.svg");
+        background-repeat: no-repeat, repeat;
+        background-position: center;
+        background-size: 1rem, 100%;
+}
+@media screen and (max-width: 600px) {
+    .intro{
+        display: flex;
+        align-items: center;
+        gap: 10;
+    }
+    .intro h2{
+        margin-left: 2rem;
+    }
+    .header{
+        font-size: 1.5rem;
+    }
+    .roptions{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 5rem;
+        padding-bottom: 3rem;
+    }
+    
+}
+@media screen and (min-width: 600px) {
+    .rimg{
+        display: none
+    }
+}

@@ -2,9 +2,10 @@ import { lazy, useState, createContext, useMemo } from 'react'
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
+import { CartItems } from './mock/cart';
 
 
-import { LoginPage, HomePage, UpdateProfilePage, CartPage, CategoriesPage } from './pages';
+import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage } from './pages';
 
 //Lazy Loaded Pages
 const SignUpPage = lazy(() => import('./pages').then(m => ({ default: m.SignUpPage })))
@@ -17,24 +18,7 @@ const ConfirmResetPage = lazy(() => import('./pages').then(m => ({default: m.Con
 export const Context = createContext<any>(null);
 
 function App() {
-  const [cartData, setCartData] = useState([{
-    name: 'beans',
-    image: '',
-    price: 1450,
-    quantity: 1
-  },
-  {
-    name: 'rice',
-    image: '',
-    price: 2000,
-    quantity: 1
-  },
-  {
-    name: 'flour',
-    image: '',
-    price: 3400,
-    quantity: 1 //fake cart data
-  }]);
+  const [cartData, setCartData] = useState(CartItems);
 
   // const values = useMemo(() => ({
   //   cartData, setCartData
@@ -67,6 +51,7 @@ function App() {
           <Route path="/reset" element={<ConfirmResetPage/>} />
           <Route path="/cart" element={<CartPage/>} />
           <Route path="/categories" element={<CategoriesPage/>} />
+          <Route path="/product" element={<ProductPage/>} />
         </Routes>
       </ThemeProvider>
     </Context.Provider>
