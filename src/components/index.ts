@@ -5,3 +5,4 @@ export * from './ImagePicker/imagepicker';
 export * from './Tabs/tabs';
 export * from './AddressCard/address-card';
 export * from './CustomModal/modal';
+export * from './ProductCard/card'

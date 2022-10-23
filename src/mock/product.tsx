@@ -1,9 +1,8 @@
 import { Product } from "../types";
 import { makeid } from "../helpers";
+import Gino from "../assets/gino.svg"
 
-import Gino from "../assets/gino.svg";
-
-export const SingleProduct: Product = {
+export const OneProduct: Product = {
     id: makeid(15),
     name: "Gino Pepper & Onion Tomato Paste 70g Sachet",
     brand: "gino",

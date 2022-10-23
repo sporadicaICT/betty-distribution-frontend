@@ -1,0 +1,47 @@
+
+.mainContent {
+    background-color: #eeeeee;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding-top: 20px;
+}
+
+.productsList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.categoriesList {
+    text-align: center;
+
+    h6 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+}
+
+.categories {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categoryItem {
+    background: #E1E1E1;
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px auto;
+    height: 50px;
+    font-family: 'Inter', sans-serif;
+    text-transform: capitalize;
+    padding: 7px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.activeCategory{
+    background: var(--primary);
+    color: #fff;
+}

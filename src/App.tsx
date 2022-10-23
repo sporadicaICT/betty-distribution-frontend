@@ -1,12 +1,11 @@
 import { lazy, useState, createContext, useMemo } from 'react'
-import './App.css'
+import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { CartItems } from './mock/cart';
 
 
-import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage } from './pages';
-import { create } from '@mui/material/styles/createTransitions';
+import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage } from './pages';
 
 //Lazy Loaded Pages
 const SignUpPage = lazy(() => import('./pages').then(m => ({ default: m.SignUpPage })))
@@ -51,6 +50,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassPage/>} />
           <Route path="/reset" element={<ConfirmResetPage/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/categories" element={<CategoriesPage/>} />
           <Route path="/product" element={<ProductPage/>} />
         </Routes>
       </ThemeProvider>

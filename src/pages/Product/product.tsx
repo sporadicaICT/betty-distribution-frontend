@@ -5,7 +5,7 @@ import { Navbar} from "../../components";
 import { Context } from "../../App";
 import { buttonStyles, whiteButtonText, blackButtonText } from "../../utils/styles.utils";
 import styles from "../Product/product.module.scss";
-import { SingleProduct } from "../../mock/product";
+import { OneProduct } from "../../mock/product";
 import arrowDown from "../../assets/arrow-down.svg"
 
 
@@ -43,7 +43,7 @@ export const ProductPage: React.FC = () => {
             <h2 className ={styles.header}>Product Information</h2>
             <Container sx={containerStyles}>
                 <Box sx={{...boxStyles, width: '40%', display: {xs: 'none', md: 'flex'}, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                    <img className={styles.product} src={SingleProduct.image_url} alt="" />
+                    <img className={styles.product} src={OneProduct.image_url} alt="" />
                     
                      <div className={styles.options}>
                         <Button sx={{...addButton, width: '40%', background: themeColors.secondary.main}}>Add to Cart</Button>
@@ -53,15 +53,15 @@ export const ProductPage: React.FC = () => {
                 <Box sx={{...boxStyles, width: {xs: '85%', md: '45%'}, display: 'flex', flexDirection: 'column'}}>
                     <div className={styles.desc}>
                         <div className={styles.intro}>
-                            <img className={styles.rimg} src={SingleProduct.image_url} alt="" />
-                            <h2>{SingleProduct.name}</h2>
+                            <img className={styles.rimg} src={OneProduct.image_url} alt="" />
+                            <h2>{OneProduct.name}</h2>
                         </div>
                         <h3>Description:</h3>
-                        <p>{SingleProduct.description}</p>
+                        <p>{OneProduct.description}</p>
 
                     </div>
                     <div className={styles.desc} style={{marginTop: 'auto', display: 'flex'}}>
-                        <h2>Price: N {SingleProduct.unit_price}</h2>
+                        <h2>Price: N {OneProduct.unit_price}</h2>
                         <h2 style={{marginLeft: 'auto'}}>Qty: 1 <select name="quantity" id="">
                             {numbers.map((quantity) => {
                                 return (

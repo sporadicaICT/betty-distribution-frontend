@@ -9,6 +9,7 @@ import ShopByBrand from "../../assets/shop-by-brand-illustration.svg";
 import CartIll from '../../assets/cart-illustration.svg';
 
 import styles from './home.module.scss';
+import { Link } from "react-router-dom";
 
 export const HomePage: React.FC = () => {
     const [activeTab, setActiveTab] = useState(0);
