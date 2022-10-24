@@ -13,6 +13,8 @@ export const ProductPage: React.FC = () => {
 
     const themeColors = useTheme().palette;
 
+    let [quantity, setQuantity] = useState(1);
+
     const containerStyles = {
         display: 'flex',
         alignItems: 'center',
@@ -36,6 +38,12 @@ export const ProductPage: React.FC = () => {
     for (let i = 1; i<=100; i++) {
         numbers.push(i);
     }
+    const increase = () => {
+        setQuantity(quantity++)
+    }
+    const decrease = () => {
+        setQuantity(quantity--)
+    }
 
     return (
         <>
@@ -58,18 +66,18 @@ export const ProductPage: React.FC = () => {
                         </div>
                         <h3>Description:</h3>
                         <p>{OneProduct.description}</p>
-
                     </div>
                     <div className={styles.desc} style={{marginTop: 'auto', display: 'flex'}}>
                         <h2>Price: N {OneProduct.unit_price}</h2>
-                        <h2 style={{marginLeft: 'auto'}}>Qty: 1 <select name="quantity" id="">
-                            {numbers.map((quantity) => {
-                                return (
-                                    <option value={quantity}>{quantity}</option>
-                                )
-                            })}
-                            </select> </h2>
-
+                        <div className={styles.quantity} style={{marginLeft: 'auto'}}>
+                            <h2>Qty: <input type="number" value={quantity} onChange = {(e) => {
+                                setQuantity(parseInt(e.target.value))
+                            }}/></h2>
+                            <div className={styles.counter}>
+                                <Button onClick={decrease}>-</Button>
+                                <Button onClick={increase}>+</Button>
+                            </div> 
+                        </div>
                     </div>
                     <div className={styles.roptions}>
                         <Button sx={{...addButton, width: '40%', background: themeColors.secondary.main}}>Add to Cart</Button>
