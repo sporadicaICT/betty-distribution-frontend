@@ -47,6 +47,7 @@
     height: 2rem;
     align-items: center;
     width: auto;
+    justify-content: center;
 }
 input{
     border: none;
@@ -85,7 +86,10 @@ input[type=number] {
         padding-bottom: 3rem;
     }
     input{
-        width: 2rem
+        width: 4rem
+    }
+    .quantity{
+        flex-direction: column;
     }
 }
 @media screen and (min-width: 600px) {
@@ -93,3 +97,12 @@ input[type=number] {
         display: none
     }
 }
+@media screen and (min-width: 460px) and (max-width: 600px){
+    .quantity{
+        flex-direction: row;
+    }
+    input{
+        width: 3rem;
+    }
+}
+
