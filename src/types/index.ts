@@ -8,22 +8,22 @@ export interface DeliveryAddress {
 
 
 export interface User {
+    id: string
     email: string;
-    phone_number: string[];
-    cart: any[];
+    phone_number: string[]|null;
     name: string;
     still_exists: boolean;
-    user_delivery_address: DeliveryAddress[];
+    user_delivery_address: DeliveryAddress[]|null;
 }
 
 export interface Cart {
-        id: string;
-        name: string;
-        size: string;
-        brand: string;
-        unit_price: number;
-        quantity: number;
-        image: string;
+    id: string;
+    name: string;
+    size: string;
+    brand: string;
+    unit_price: number;
+    quantity: number;
+    image: string;
 };
 
 export interface Brand {
@@ -47,4 +47,11 @@ export interface Order {
     order_type: "wholesale"|"retail",
     items: Cart,
     delivery_address: DeliveryAddress
+}
+
+export interface AppContextType {
+    currentUser: User|null;
+    savedItems: Product[]|null;
+    orders: Order[]|null;
+    cart: Cart[]|null
 }
