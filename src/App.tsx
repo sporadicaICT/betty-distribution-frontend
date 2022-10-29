@@ -1,11 +1,14 @@
-import { lazy, useState, createContext, useMemo } from 'react'
+import { lazy, useState, createContext, useMemo, useEffect } from 'react'
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { CartItems } from './mock/cart';
+import { auth, firestore } from "./utils/firebase.config";
 
 
 import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage } from './pages';
+import { AppDataContext } from './contexts/App';
+import { AppContextType } from './types';
 
 //Lazy Loaded Pages
 const SignUpPage = lazy(() => import('./pages').then(m => ({ default: m.SignUpPage })))
@@ -17,6 +20,20 @@ const ConfirmResetPage = lazy(() => import('./pages').then(m => ({default: m.Con
  
 export const Context = createContext<any>(null);
 
+function AppData(props:any){
+  const [appData, setAppData] = useState(null)
+  const value = {
+    appData: appData,
+    setAppData: setAppData
+  }
+  
+  return(
+    <AppDataContext.Provider value={value}>
+      { props.children }
+    </AppDataContext.Provider>
+  )
+}
+
 function App() {
   const [cartData, setCartData] = useState(CartItems);
 
@@ -26,7 +43,7 @@ function App() {
 
   const values = [cartData, setCartData];
 
-  const [authenticated, setAuth] = useState(true);
+  const [authenticated, setAuth] = useState(true); //Change this to auth.currentUser ? true : false
   const theme = createTheme({
     palette: {
       primary: {
@@ -38,6 +55,10 @@ function App() {
       },
     }
   })
+
+  useEffect(() => {
+    //const unsubsribe = auth.onAuthStateChanged()
+  }, [])
 
   return (
     <Context.Provider value={values}>
