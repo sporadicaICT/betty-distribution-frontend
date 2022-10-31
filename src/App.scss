@@ -4,6 +4,7 @@
 
 :root {
     --primary: #F27F7E;
+    --dark: #121212;
 }
 
 body {
@@ -18,6 +19,11 @@ p{
     font-family: 'Poppins', sans-serif;
 }
 
+.inter-font {
+    font-family: 'Inter', sans-serif;
+    font-family: 400;
+}
+
 .modal-form-container {
     width: 50%;
     margin: 0 auto;
@@ -29,3 +35,15 @@ p{
         width: 85%;
     }
 }
+
+.flex{ display: flex; }
+.items-center{ align-items: center; }
+.justify-center{ justify-content: center; }
+.flex-col{ flex-direction: column; }
+.gap-5{ gap: 5px; }
+.gap-10{ gap: 10px; }
+.gap-15{ gap: 15px; }
+.gap-25{ gap: 25px; }
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+.h-full { height: 100vh; }
