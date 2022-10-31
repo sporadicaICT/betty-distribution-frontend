@@ -1,5 +1,5 @@
-import { Navbar, ImagePicker, CustomModal } from "../../components";
-import { Button, TextField, Tab, Autocomplete, Snackbar ,FormControlLabel, FormControl, InputLabel, MenuItem, Typography, useTheme } from "@mui/material";
+import { Navbar, ImagePicker } from "../../components";
+import { Button, TextField, Tab, Autocomplete, Snackbar, Typography, useTheme } from "@mui/material";
 import React, { useRef, useState } from "react";
 import { buttonStyles } from "../../utils/styles.utils";
 import styles from './admin.module.scss';
