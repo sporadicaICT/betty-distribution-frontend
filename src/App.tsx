@@ -6,7 +6,7 @@ import { CartItems } from './mock/cart';
 import { auth, firestore } from "./utils/firebase.config";
 
 
-import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage } from './pages';
+import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage, PageNotFound } from './pages';
 import { AppDataContext } from './contexts/App';
 import { AppContextType } from './types';
 
@@ -73,6 +73,7 @@ function App() {
           <Route path="/cart" element={<CartPage/>} />
           <Route path="/categories" element={<CategoriesPage/>} />
           <Route path="/product" element={<ProductPage/>} />
+          <Route path="/*" element={<PageNotFound/>} />
         </Routes>
       </ThemeProvider>
     </Context.Provider>
