@@ -42,6 +42,7 @@ export interface Product {
     image_url?:string;
 }
 export interface Order {
+    user_id: string;
     order_num: string;
     order_status: "pending"|"delayed"|"delivered"|"failed"|"in transit",
     order_type: "wholesale"|"retail",
