@@ -11,6 +11,18 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.filters {
+    display: grid;
+    grid-template-columns: 10% auto;
+
+    h2 {
+        color: var(--primary);
+        text-transform: capitalize;
+        font-size: 20px;
+    }
+
+}
+
 .categoriesList {
     text-align: center;
 
