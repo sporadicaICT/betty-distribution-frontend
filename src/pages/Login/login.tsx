@@ -8,12 +8,14 @@ import { Google } from "@mui/icons-material";
 
 //Firebase and React hook form Imports
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { onSnapshot, getDocs, query, doc, collection, DocumentSnapshot } from "firebase/firestore";
+import { onSnapshot, doc, collection, DocumentSnapshot, query, where } from "firebase/firestore";
 import { auth, firestore } from "../../utils/firebase.config";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AppContextType, User } from "../../types";
 import { AppDataContext } from "../../contexts/App";
+
+import { useCollection } from "react-firebase-hooks/firestore";
 
 export const LoginPage: React.FC = () => {
 
@@ -54,7 +56,11 @@ export const LoginPage: React.FC = () => {
 
     //Function to get Users Orders
     const getOrdersCollection = async (user_id: string) => {
-        const ref = collection(firestore, 'user_products', user_id, 'orders')
+        const ref = collection(firestore, 'orders')
+        const queryRef = query(ref, where('user_id', '==', user_id))
+        const [value] = useCollection(queryRef)
+
+        /*
         let ordersCollection: any = []
         onSnapshot(ref, {
             next: ((snapshot) => {
@@ -66,16 +72,19 @@ export const LoginPage: React.FC = () => {
                     ordersCollection = [...ordersCollection, doc.data()]
                 })
             })
-        })
-        setAppData({ ...appData, orders: ordersCollection })
-        return ordersCollection
+        })*/
+
+        setAppData({ ...appData, orders: value })
+        return value
 
     }
 
     //Function to get Users Cart
     const getCartCollection = async (user_id: string) => {
         const ref = collection(firestore, 'user_products', user_id, 'cart')
-        let cartCollection: any = []
+        //let cartCollection: any = []
+        const [value] = useCollection(ref)
+        /*
         onSnapshot(ref, {
             next: ((snapshot) => {
                 snapshot.forEach(doc => {
@@ -86,9 +95,9 @@ export const LoginPage: React.FC = () => {
                     cartCollection = [...cartCollection, doc.data()]
                 })
             })
-        })
-        setAppData({ ...appData, cart: cartCollection })
-        return cartCollection
+        })*/
+        setAppData({ ...appData, cart: value })
+        return value
 
     }
 
