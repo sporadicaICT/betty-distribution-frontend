@@ -10,7 +10,7 @@ type CustomModalProps = {
 export const CustomModal: React.FC<CustomModalProps> = ({ isOpen, dismiss, children }) => {
     return(
         <Modal sx={backdropStyle} open={isOpen} onClose={dismiss}>
-            <Box sx={modalStyle}>
+            <Box sx={{...modalStyle, padding: '40px'}}>
                 { children }
             </Box>
         </Modal>
