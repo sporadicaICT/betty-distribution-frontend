@@ -4,11 +4,14 @@ import App from './App'
 import './index.css';
 
 import { BrowserRouter } from 'react-router-dom';
-
+import { SomethingWentWrong } from './components';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <SomethingWentWrong>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SomethingWentWrong>
   </React.StrictMode>
 )
