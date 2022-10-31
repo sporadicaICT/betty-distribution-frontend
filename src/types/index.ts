@@ -49,6 +49,12 @@ export interface Order {
     delivery_address: DeliveryAddress
 }
 
+export interface Filters {
+    active: boolean,
+    minPrice?:number,
+    maxPrice?: number,
+    priceArrangement?: 'ascending'|'descending'
+}
 export interface AppContextType {
     currentUser: User|null;
     savedItems: Product[]|null;
