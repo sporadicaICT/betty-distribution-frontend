@@ -3,6 +3,8 @@ import styles from './navbar.module.scss';
 import { Container, Box } from '@mui/material';
 import { Search, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Searchbar } from '../Searchbar/searchbar';
 
 type NavbarProps = {
     signedIn: boolean
@@ -21,6 +23,7 @@ const containerStyles = {
 export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
 
     const router = useNavigate();
+    const [searchActive, setSearchActive] = useState<boolean>(false);
 
     return(
         <nav className={styles.navbar}>
@@ -38,9 +41,13 @@ export const Navbar: React.FC<NavbarProps> = ({ signedIn }) => {
                         <span className={styles.auth}>Create Account</span>
                     </Box>
 
-                    <div className={styles.navbarBox}>
-                        <Search/>
-                    </div>
+                    {
+                        !searchActive ? 
+                        <div className={styles.navbarBox} onClick={() => setSearchActive(true)}>
+                            <Search/>
+                        </div>
+                        : <Searchbar />
+                    }
 
                     <Box sx={{ display: signedIn?'block':'none' }}>
                         <div onClick={() => router('/update-profile')} className={styles.navbarBox}>
