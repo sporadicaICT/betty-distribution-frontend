@@ -6,9 +6,12 @@ import { CartItems } from './mock/cart';
 import { auth, firestore } from "./utils/firebase.config";
 
 
-import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage, PageNotFound } from './pages';
+
+
+import { LoginPage, HomePage, UpdateProfilePage, CartPage, ProductPage, CategoriesPage, OrderPage, PageNotFound } from './pages';
 import { AppDataContext } from './contexts/App';
 import { AppContextType } from './types';
+
 
 //Lazy Loaded Pages
 const SignUpPage = lazy(() => import('./pages').then(m => ({ default: m.SignUpPage })))
@@ -73,6 +76,7 @@ function App() {
           <Route path="/cart" element={<CartPage/>} />
           <Route path="/categories" element={<CategoriesPage/>} />
           <Route path="/product" element={<ProductPage/>} />
+          <Route path="/order" element={<OrderPage/>} />
           <Route path="/*" element={<PageNotFound/>} />
         </Routes>
       </ThemeProvider>

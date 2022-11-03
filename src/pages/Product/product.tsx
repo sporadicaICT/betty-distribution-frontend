@@ -24,7 +24,8 @@ export const ProductPage: React.FC = () => {
     }
     const boxStyles = {
         height: '25rem',
-        background: themeColors.secondary.main
+        background: themeColors.secondary.main,
+        borderRadius: '15px'
     }
     const addButton = {
         ...buttonStyles,
@@ -33,10 +34,6 @@ export const ProductPage: React.FC = () => {
     const buyButton = {
         ...buttonStyles,
         ...whiteButtonText
-    }
-    let numbers = [];
-    for (let i = 1; i<=100; i++) {
-        numbers.push(i);
     }
     const increase = () => {
         setQuantity(quantity++)

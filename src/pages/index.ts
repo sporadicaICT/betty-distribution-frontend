@@ -6,6 +6,6 @@ export * from './ForgotPassword/forgotpass';
 export * from './ConfirmReset/confirmreset';
 export * from './UpdateProfile/update-profile';
 export * from './Cart/cart';
-export * from './Categories/categories';;
+export * from './Categories/categories';
 export * from './Product/product';
 export * from './PageNotFound/404';

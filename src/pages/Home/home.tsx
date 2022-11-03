@@ -11,6 +11,7 @@ import CartIll from '../../assets/cart-illustration.svg';
 import styles from './home.module.scss';
 
 export const HomePage: React.FC = () => {
+
     const [activeTab, setActiveTab] = useState(0);
     const theme = useTheme().palette;
 
@@ -28,11 +29,11 @@ export const HomePage: React.FC = () => {
 
             <section className={styles.boxes}>
                 <Box sx={boxStyles} className={styles.intro}>
-                    <div>
-                        <Typography variant="h4">
+                    <div className={styles.introText}>
+                        <Typography variant='h4' sx={{fontSize: {xs: '1.5rem', md: '2rem'}}}>
                             Providing Quality Goods
                         </Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h5" sx={{fontSize: {xs: '1rem', md: '1.5rem'}}}>
                             At affordable prices
                         </Typography>
                     </div>
@@ -42,21 +43,21 @@ export const HomePage: React.FC = () => {
 
 
             <section className={styles.boxes}>
-                <DescriptionBox
-                    title="Search"
-                    description="Search through our catalog of great products."
-                    image={SearchIll}
-                />
-                <DescriptionBox
-                    title="Shop by Brand"
-                    image={ShopByBrand}
-                    description="Various brabds to choose from!"
-                />
-                <DescriptionBox
-                    title="Checkout"
-                    image={CartIll}
-                    description="Have items delivered to your doorstep with ease."
-                />
+                    <DescriptionBox
+                        title="Search"
+                        description="Search through our catalog of great products."
+                        image={SearchIll}
+                    />
+                    <DescriptionBox
+                        title="Shop by Brand"
+                        image={ShopByBrand}
+                        description="Various brabds to choose from!"
+                    />
+                    <DescriptionBox
+                        title="Checkout"
+                        image={CartIll}
+                        description="Have items delivered to your doorstep with ease."
+                    />
             </section>
 
             <Link to={'/admin'}>
