@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 .mainContent {
     background-color: #eeeeee;
     display: grid;
@@ -44,4 +46,29 @@
 .activeCategory{
     background: var(--primary);
     color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .mainContent{
+       display: flex;
+       flex-direction: column;
+       
+    }
+    .categories{
+        display: flex;
+        overflow-x: auto;
+        width: 100vw;
+         padding-left: 1rem;
+    }
+    .categories::-webkit-scrollbar{
+        display: none;
+    }
+    .categoryItem{
+        margin-right: 15px;
+    }
+    .productsList{
+        display: grid;
+        grid-template-columns: 50% 50%;
+         padding-left: 2rem;
+    }
 }

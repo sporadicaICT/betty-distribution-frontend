@@ -38,20 +38,20 @@ $padding-value: 20px 15px;
 
 @media screen and (max-width: 550px){
 
-    .boxes {
-        flex-direction: column;
-    }
+    // .boxes {
+    //     flex-direction: column;
+    // }
 
     .descriptionBox {
         width: 100%;
         margin: 15px 0;
     }
-}
-
-@media screen and (max-width: 550px){
     .intro {
         flex-direction: column;
-    }    
+    } 
+    .introText {
+        padding-top: 15px;
+    }   
 }
 
 @media screen and (min-width: 550px) and (max-width:800px){
